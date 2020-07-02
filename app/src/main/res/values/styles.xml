@@ -1,0 +1,40 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="Main" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="boxBackgroundColor">@android:color/white</item>
+        <item name="boxStrokeColor">@android:color/white</item>
+        <item name="colorPrimary">@android:color/holo_orange_dark</item>
+        <item name="colorPrimaryDark">@android:color/holo_orange_light</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTextField" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="boxBackgroundColor">@android:color/white</item>
+        <item name="boxStrokeColor">@android:color/white</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/orange</item>
+    </style>
+
+    <style name="MyDarkToolbarStyle" parent="@style/Widget.AppCompat.Spinner.DropDown.ActionBar">
+        <item name="background">?android:selectableItemBackground</item>
+        <!--        <item name="android:popupBackground">@color/layoutbackground</item>-->
+        <item name="android:dropDownSelector">?android:selectableItemBackground</item>
+        <item name="android:divider">@android:color/black</item>
+        <item name="android:overlapAnchor">true</item>
+    </style>
+
+</resources>

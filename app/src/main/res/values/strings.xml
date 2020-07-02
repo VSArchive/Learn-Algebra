@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Kids App</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="signUp">SignUp</string>
+    <string name="no_account">No account ?</string>
+    <string name="username">Username</string>
+    <string name="already_have_an_account">Already have an account ? </string>
+    <string name="forgot_password">Forgot Password ?</string>
+
+    <string-array name="Digits">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="TypeOfNumbers">
+        <item>Integer</item>
+        <item>Decimal</item>
+    </string-array>
+    <string-array name="TypeOfNumbersForDivision">
+        <item>Integer</item>
+        <item>Integer with Remainder</item>
+        <item>Decimal</item>
+    </string-array>
+    <string-array name="TypeOfQuestion">
+        <item>Show at once</item>
+        <item>Show one by one</item>
+    </string-array>
+</resources>
