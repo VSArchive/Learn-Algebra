@@ -32,7 +32,7 @@ class SquareRootQuestionActivity : AppCompatActivity() {
 
         val squareQuestion = squareAnswer * squareAnswer
 
-        val displayQuestion = "3√ $squareQuestion"
+        val displayQuestion = "√ $squareQuestion"
 
         question.text = displayQuestion
 
@@ -59,7 +59,7 @@ class SquareRootQuestionActivity : AppCompatActivity() {
                     )
                     AnswerStatusImg.setImageDrawable(
                         resources.getDrawable(
-                            R.drawable.ic_check,
+                            R.drawable.ic_correct,
                             null
                         )
                     )
@@ -80,7 +80,7 @@ class SquareRootQuestionActivity : AppCompatActivity() {
                     )
                     AnswerStatusImg.setImageDrawable(
                         resources.getDrawable(
-                            R.drawable.ic_close,
+                            R.drawable.ic_incorrect,
                             null
                         )
                     )

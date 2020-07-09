@@ -120,7 +120,7 @@ class DivisionQuestionActivity : AppCompatActivity() {
             null,
             null
         )
-        AnswerStatusImg.setImageDrawable(resources.getDrawable(R.drawable.ic_check, null))
+        AnswerStatusImg.setImageDrawable(resources.getDrawable(R.drawable.ic_correct, null))
         Handler().postDelayed({
             tw.text = ""
             tw.setCharacterDelay(150)
@@ -154,7 +154,7 @@ class DivisionQuestionActivity : AppCompatActivity() {
             null,
             null
         )
-        AnswerStatusImg.setImageDrawable(resources.getDrawable(R.drawable.ic_close, null))
+        AnswerStatusImg.setImageDrawable(resources.getDrawable(R.drawable.ic_incorrect, null))
         Handler().postDelayed({
             tw.text = ""
             tw.setCharacterDelay(150)

@@ -159,7 +159,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/group_6"
+        app:srcCompat="@drawable/right_img"
         android:contentDescription="@string/design" />
 
     <ImageView
@@ -169,7 +169,7 @@
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/group_1"
+        app:srcCompat="@drawable/left_img"
         android:contentDescription="@string/design"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

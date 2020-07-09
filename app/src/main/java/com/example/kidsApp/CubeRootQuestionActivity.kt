@@ -58,7 +58,7 @@ class CubeRootQuestionActivity : AppCompatActivity() {
                     )
                     AnswerStatusImg.setImageDrawable(
                         resources.getDrawable(
-                            R.drawable.ic_check,
+                            R.drawable.ic_correct,
                             null
                         )
                     )
@@ -79,7 +79,7 @@ class CubeRootQuestionActivity : AppCompatActivity() {
                     )
                     AnswerStatusImg.setImageDrawable(
                         resources.getDrawable(
-                            R.drawable.ic_close,
+                            R.drawable.ic_incorrect,
                             null
                         )
                     )
