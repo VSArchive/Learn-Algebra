@@ -25,21 +25,6 @@
         app:xAnimate="true"
         app:yAnimate="true" />
 
-    <!--    <Button-->
-    <!--        android:id="@+id/Subtraction"-->
-    <!--        android:layout_width="220dp"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:background="@drawable/round_button"-->
-    <!--        android:elevation="10dp"-->
-    <!--        android:layout_marginBottom="20dp"-->
-    <!--        android:text="Subtraction"-->
-    <!--        android:textAllCaps="false"-->
-    <!--        android:textColor="@android:color/white"-->
-    <!--        android:textSize="18sp"-->
-    <!--        app:layout_constraintBottom_toTopOf="@+id/AdditionSubtraction"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent" />-->
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,7 +44,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/round_button"
                 android:elevation="10dp"
-                android:text="Addition"
+                android:text="@string/addition"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
@@ -74,7 +59,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/round_button"
                 android:elevation="10dp"
-                android:text="Addition &amp; Subtraction"
+                android:text="@string/addition_amp_subtraction"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
@@ -89,7 +74,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/round_button"
                 android:elevation="10dp"
-                android:text="Multiplication"
+                android:text="@string/multiplication"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
@@ -103,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_button"
                 android:elevation="10dp"
-                android:text="Division"
+                android:text="@string/division"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
@@ -120,7 +105,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/round_button"
                 android:elevation="10dp"
-                android:text="Square Root"
+                android:text="@string/square_root"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
@@ -136,7 +121,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/round_button"
                 android:elevation="10dp"
-                android:text="Cube Root"
+                android:text="@string/cube_root"
                 android:textAllCaps="false"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
@@ -158,6 +143,7 @@
         android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_logout" />
+        app:srcCompat="@drawable/ic_logout"
+        android:contentDescription="@string/logout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

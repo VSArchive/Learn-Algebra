@@ -32,7 +32,9 @@ class SquareRootQuestionActivity : AppCompatActivity() {
 
         val squareQuestion = squareAnswer * squareAnswer
 
-        question.text = "√ $squareQuestion"
+        val displayQuestion = "3√ $squareQuestion"
+
+        question.text = displayQuestion
 
         val tw = findViewById<TypeWriter>(R.id.text)
         tw.setCharacterDelay(150)

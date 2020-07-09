@@ -10,6 +10,32 @@
     <string name="forgot_password">Forgot Password ?</string>
     <string name="answerStatus">AnswerStatus</string>
     <string name="your_answer">Your Answer</string>
+    <string name="your_remainder">Your Remainder</string>
+    <string name="check_answer">Check Answer</string>
+    <string name="size_of_1st_digit">Size of 1st digit</string>
+    <string name="size_of_2nd_digit">Size of 2nd digit</string>
+    <string name="question">Question</string>
+    <string name="time_duration">Time duration :</string>
+    <string name="no_of_questions">No of questions</string>
+    <string name="addition">Addition</string>
+    <string name="addition_amp_subtraction"><![CDATA[Addition & Subtraction]]></string>
+    <string name="multiplication">Multiplication</string>
+    <string name="division">Division</string>
+    <string name="square_root">Square Root</string>
+    <string name="cube_root">Cube Root</string>
+    <string name="logout">LogOut</string>
+    <string name="digits">Digits</string>
+    <string name="rows">Rows</string>
+    <string name="design">design</string>
+    <string name="logo">logo</string>
+    <string name="student_name">Student Name</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="country">Country</string>
+    <string name="submit">Submit</string>
+    <string name="details">Details</string>
 
     <string-array name="Digits">
         <item>1</item>

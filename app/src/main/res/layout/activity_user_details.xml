@@ -37,7 +37,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
-                    android:hint="Student Name"
+                    android:hint="@string/student_name"
                     app:boxBackgroundColor="@android:color/white"
                     app:boxBackgroundMode="filled"
                     app:boxCornerRadiusBottomEnd="5dp"
@@ -65,7 +65,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
-                    android:hint="Date of Birth"
+                    android:hint="@string/date_of_birth"
                     app:boxBackgroundColor="@android:color/white"
                     app:boxBackgroundMode="filled"
                     app:boxCornerRadiusBottomEnd="5dp"
@@ -93,7 +93,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
-                    android:hint="Phone Number"
+                    android:hint="@string/phone_number"
                     app:boxBackgroundColor="@android:color/white"
                     app:boxBackgroundMode="filled"
                     app:boxCornerRadiusBottomEnd="5dp"
@@ -132,7 +132,7 @@
                         android:layout_weight="1"
                         android:checked="true"
                         android:padding="10dp"
-                        android:text="Male"
+                        android:text="@string/male"
                         app:layout_constraintStart_toStartOf="parent" />
 
                     <com.google.android.material.radiobutton.MaterialRadioButton
@@ -140,7 +140,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:padding="10dp"
-                        android:text="Female"
+                        android:text="@string/female"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/materialRadioButton" />
                 </RadioGroup>
@@ -152,7 +152,7 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="20dp"
-                    android:hint="Country"
+                    android:hint="@string/country"
                     app:boxBackgroundColor="@android:color/white"
                     app:boxBackgroundMode="filled"
                     app:boxCornerRadiusBottomEnd="5dp"
@@ -184,7 +184,7 @@
             android:layout_marginEnd="20dp"
             android:background="@android:color/white"
             android:padding="0dp"
-            android:text="Submit"
+            android:text="@string/submit"
             app:cornerRadius="20dp"
             app:layout_constraintCircleRadius="20dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -197,30 +197,12 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="50dp"
             android:padding="5dp"
-            android:text="Details"
+            android:text="@string/details"
             android:textColor="@android:color/black"
             android:textSize="30sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <!--    <ImageView-->
-        <!--        android:id="@+id/imageView2"-->
-        <!--        android:layout_width="wrap_content"-->
-        <!--        android:layout_height="wrap_content"-->
-        <!--        android:layout_marginTop="16dp"-->
-        <!--        app:layout_constraintEnd_toEndOf="parent"-->
-        <!--        app:layout_constraintTop_toTopOf="parent"-->
-        <!--        app:srcCompat="@drawable/group_6" />-->
-
-        <!--    <ImageView-->
-        <!--        android:id="@+id/imageView3"-->
-        <!--        android:layout_width="wrap_content"-->
-        <!--        android:layout_height="wrap_content"-->
-        <!--        android:layout_marginBottom="16dp"-->
-        <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--        app:layout_constraintStart_toStartOf="parent"-->
-        <!--        app:srcCompat="@drawable/group_1" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

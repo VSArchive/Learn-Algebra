@@ -31,7 +31,9 @@ class CubeRootQuestionActivity : AppCompatActivity() {
 
         val cubeQuestion = cubeAnswer * cubeAnswer * cubeAnswer
 
-        question.text = "3√ $cubeQuestion"
+        val displayQuestion = "3√ $cubeQuestion"
+
+        question.text = displayQuestion
 
         val tw = findViewById<TypeWriter>(R.id.text)
         tw.setCharacterDelay(150)

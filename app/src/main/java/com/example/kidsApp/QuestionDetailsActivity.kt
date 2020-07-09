@@ -96,10 +96,10 @@ class QuestionDetailsActivity : AppCompatActivity() {
                 questionDisplayTypePosition = position
                 if (position == 0) {
                     seekBar.visibility = View.GONE
-                    textAnimationduration.visibility = View.GONE
+                    textAnimationDuration.visibility = View.GONE
                 } else {
                     seekBar.visibility = View.VISIBLE
-                    textAnimationduration.visibility = View.VISIBLE
+                    textAnimationDuration.visibility = View.VISIBLE
                 }
             }
         }
@@ -108,7 +108,7 @@ class QuestionDetailsActivity : AppCompatActivity() {
             questionDisplayType.visibility = View.GONE
             questionDisplayTypePosition = 0
             seekBar.visibility = View.GONE
-            textAnimationduration.visibility = View.GONE
+            textAnimationDuration.visibility = View.GONE
         }
 
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
@@ -156,9 +156,6 @@ class QuestionDetailsActivity : AppCompatActivity() {
                     if (intent.getStringExtra("operation") == "plus") {
                         op = "+"
                         Answer += randomInt
-                    } else if (intent.getStringExtra("operation") == "minus") {
-                        op = "-"
-                        Answer -= randomInt
                     } else if (intent.getStringExtra("operation") == "plusMinus") {
                         val randOp = Random.nextInt(0, 2)
                         if (randOp == 0) {
@@ -202,9 +199,6 @@ class QuestionDetailsActivity : AppCompatActivity() {
                     if (intent.getStringExtra("operation") == "plus") {
                         op = "+"
                         Answer += randomDouble
-                    } else if (intent.getStringExtra("operation") == "minus") {
-                        op = "-"
-                        Answer -= randomDouble
                     } else if (intent.getStringExtra("operation") == "plusMinus") {
                         val randOp = Random.nextInt(0, 2)
                         if (randOp == 0) {

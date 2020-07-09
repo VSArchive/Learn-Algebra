@@ -20,15 +20,11 @@ class SignUpActivity : AppCompatActivity() {
         var emailPerson = ""
     }
 
-    lateinit var map: HashMap<String, Any>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
         val progressDialog = ProgressDialog(this, R.style.MyAlertDialogStyle)
-        details.setOnClickListener {
-            startActivity(Intent(this, UserDetailsActivity::class.java))
-        }
 
         auth = Firebase.auth
         signUpBtn.setOnClickListener {

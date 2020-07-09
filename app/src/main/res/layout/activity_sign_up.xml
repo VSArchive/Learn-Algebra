@@ -124,20 +124,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
-    <Button
-        android:id="@+id/details"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="200dp"
-        android:background="@android:color/white"
-        android:padding="0dp"
-        android:text="details"
-        app:cornerRadius="20dp"
-        app:layout_constraintCircleRadius="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
     <TextView
         android:id="@+id/logIn"
         android:layout_width="wrap_content"
@@ -173,7 +159,8 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/group_6" />
+        app:srcCompat="@drawable/group_6"
+        android:contentDescription="@string/design" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -182,6 +169,7 @@
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/group_1" />
+        app:srcCompat="@drawable/group_1"
+        android:contentDescription="@string/design"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
