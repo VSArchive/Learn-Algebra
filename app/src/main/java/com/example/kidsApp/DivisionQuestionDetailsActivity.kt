@@ -196,9 +196,9 @@ class DivisionQuestionDetailsActivity : AppCompatActivity() {
                 1 -> {
                     val random1stInt = Random.nextInt(x, y)
                     var random2ndInt = 0
-                    if (a < random1stInt){
+                    if (a < random1stInt) {
                         random2ndInt = Random.nextInt(a, random1stInt)
-                    } else{
+                    } else {
                         random2ndInt = Random.nextInt(a, random1stInt + a)
                     }
                     Answer = (random1stInt / random2ndInt).toDouble()

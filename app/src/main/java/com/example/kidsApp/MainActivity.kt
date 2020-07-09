@@ -39,6 +39,8 @@ class MainActivity : AppCompatActivity() {
         AdditionSubtraction.startAnimation(popIn)
         Multiplication.startAnimation(popIn)
         Division.startAnimation(popIn)
+        SquareRoot.startAnimation(popIn)
+        CubeRoot.startAnimation(popIn)
 
         logout.setOnClickListener {
             FirebaseAuth.getInstance().signOut()
@@ -77,6 +79,16 @@ class MainActivity : AppCompatActivity() {
         Division.setOnClickListener {
             val intent = Intent(this, DivisionQuestionDetailsActivity::class.java)
             intent.putExtra("operation", "div")
+            startActivity(intent)
+        }
+        SquareRoot.setOnClickListener {
+            val intent = Intent(this, SquareRootQuestionActivity::class.java)
+//            intent.putExtra("operation", "div")
+            startActivity(intent)
+        }
+        CubeRoot.setOnClickListener {
+            val intent = Intent(this, CubeRootQuestionActivity::class.java)
+//            intent.putExtra("operation", "div")
             startActivity(intent)
         }
     }

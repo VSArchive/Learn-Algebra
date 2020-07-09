@@ -2,18 +2,14 @@ package com.example.kidsApp
 
 import android.app.Activity
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.speech.tts.TextToSpeech
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_division_question.*
-import kotlinx.android.synthetic.main.activity_division_question.answer
-import kotlinx.android.synthetic.main.activity_division_question.question
-import kotlinx.android.synthetic.main.activity_division_question.question1
-import kotlinx.android.synthetic.main.activity_division_question.submit
 import java.util.*
 
 class DivisionQuestionActivity : AppCompatActivity() {
@@ -33,10 +29,17 @@ class DivisionQuestionActivity : AppCompatActivity() {
 
         question.text = ""
         if (DivisionQuestionDetailsActivity.questionDisplayTypePosition == 0) {
-            question.text = DivisionQuestionDetailsActivity.questionArray.split(",").map { it.trim() }[index]
+            question.text =
+                DivisionQuestionDetailsActivity.questionArray.split(",").map { it.trim() }[index]
         } else {
             question1.setCharacterDelay(DivisionQuestionDetailsActivity.speed.toLong())
-            question1.animateText(DivisionQuestionDetailsActivity.questionArray.split(",").map { it.trim() }[index].split("÷").map { it.trim() })
+            question1.animateText(
+                DivisionQuestionDetailsActivity.questionArray.split(",")
+                    .map { it.trim() }[index].split("÷").map { it.trim() })
+        }
+
+        if (DivisionQuestionDetailsActivity.spinnerPosition == 0 || DivisionQuestionDetailsActivity.spinnerPosition == 2) {
+            remainder.visibility = View.GONE
         }
 
         val tw = findViewById<TypeWriter>(R.id.text)
@@ -50,25 +53,37 @@ class DivisionQuestionActivity : AppCompatActivity() {
 
         submit.setOnClickListener {
             hideKeyboard(this)
-            if (answer.editText?.text?.trim().toString() != "" && remainder.editText?.text?.trim().toString() != "") {
-                if (String.format("%.2f", DivisionQuestionDetailsActivity.AnswerArray.split(",").map { it.trim() }[index].toDouble())
+            if (answer.editText?.text?.trim().toString() != "") {
+                if (String.format(
+                        "%.2f",
+                        DivisionQuestionDetailsActivity.AnswerArray.split(",")
+                            .map { it.trim() }[index].toDouble()
+                    )
                         .toDouble() == String.format(
                         "%.2f",
                         answer.editText?.text.toString().toDouble()
                     ).toDouble()
                 ) {
-                    if (DivisionQuestionDetailsActivity.spinnerPosition == 1){
-                        if (String.format("%.2f", DivisionQuestionDetailsActivity.RemainderArray.split(",").map { it.trim() }[index].toDouble())
-                                .toDouble() == String.format(
-                                "%.2f",
-                                remainder.editText?.text.toString().toDouble()
-                            ).toDouble()
-                        ){
-                            correctAnswer(tw)
-                        } else{
-                            wrongAnswer(tw)
+                    if (DivisionQuestionDetailsActivity.spinnerPosition == 1) {
+                        if (remainder.editText?.text?.trim().toString() != "") {
+                            if (String.format(
+                                    "%.2f",
+                                    DivisionQuestionDetailsActivity.RemainderArray.split(",")
+                                        .map { it.trim() }[index].toDouble()
+                                )
+                                    .toDouble() == String.format(
+                                    "%.2f",
+                                    remainder.editText?.text.toString().toDouble()
+                                ).toDouble()
+                            ) {
+                                correctAnswer(tw)
+                            } else {
+                                wrongAnswer(tw)
+                            }
+                        } else {
+                            remainder.error = "Please enter Something"
                         }
-                    } else{
+                    } else {
                         correctAnswer(tw)
                     }
                 } else {
@@ -79,18 +94,24 @@ class DivisionQuestionActivity : AppCompatActivity() {
             }
         }
     }
+
     private fun correctAnswer(tw: TypeWriter) {
         tw.setCharacterDelay(100)
         tw.animateText("That`s correct")
         ++index
-        if (index < DivisionQuestionDetailsActivity.questionArray.split(",").map { it.trim() }.size){
+        if (index < DivisionQuestionDetailsActivity.questionArray.split(",")
+                .map { it.trim() }.size
+        ) {
             if (DivisionQuestionDetailsActivity.questionDisplayTypePosition == 0) {
-                question.text = DivisionQuestionDetailsActivity.questionArray.split(",").map { it.trim() }[index]
+                question.text = DivisionQuestionDetailsActivity.questionArray.split(",")
+                    .map { it.trim() }[index]
             } else {
                 question1.setCharacterDelay(DivisionQuestionDetailsActivity.speed.toLong())
-                question1.animateText(DivisionQuestionDetailsActivity.questionArray.split(",").map { it.trim() }[index].split(" ÷ ").map { it.trim() })
+                question1.animateText(
+                    DivisionQuestionDetailsActivity.questionArray.split(",")
+                        .map { it.trim() }[index].split(" ÷ ").map { it.trim() })
             }
-        } else{
+        } else {
             index = 0
         }
         tts!!.speak(
@@ -99,7 +120,7 @@ class DivisionQuestionActivity : AppCompatActivity() {
             null,
             null
         )
-        AnswerStatusImg.setImageDrawable(resources.getDrawable(R.drawable.ic_check,null))
+        AnswerStatusImg.setImageDrawable(resources.getDrawable(R.drawable.ic_check, null))
         Handler().postDelayed({
             tw.text = ""
             tw.setCharacterDelay(150)
@@ -107,18 +128,24 @@ class DivisionQuestionActivity : AppCompatActivity() {
         }, 2200)
         Toast.makeText(this, "Correct answer", Toast.LENGTH_SHORT).show()
     }
+
     private fun wrongAnswer(tw: TypeWriter) {
         tw.setCharacterDelay(100)
         tw.animateText("That`s incorrect")
         ++index
-        if (index < DivisionQuestionDetailsActivity.questionArray.split(",").map { it.trim() }.size){
+        if (index < DivisionQuestionDetailsActivity.questionArray.split(",")
+                .map { it.trim() }.size
+        ) {
             if (DivisionQuestionDetailsActivity.questionDisplayTypePosition == 0) {
-                question.text = DivisionQuestionDetailsActivity.questionArray.split(",").map { it.trim() }[index]
+                question.text = DivisionQuestionDetailsActivity.questionArray.split(",")
+                    .map { it.trim() }[index]
             } else {
                 question1.setCharacterDelay(DivisionQuestionDetailsActivity.speed.toLong())
-                question1.animateText(DivisionQuestionDetailsActivity.questionArray.split(",").map { it.trim() }[index].split(" ÷ ").map { it.trim() })
+                question1.animateText(
+                    DivisionQuestionDetailsActivity.questionArray.split(",")
+                        .map { it.trim() }[index].split(" ÷ ").map { it.trim() })
             }
-        } else{
+        } else {
             index = 0
         }
         tts!!.speak(
@@ -127,13 +154,14 @@ class DivisionQuestionActivity : AppCompatActivity() {
             null,
             null
         )
-        AnswerStatusImg.setImageDrawable(resources.getDrawable(R.drawable.ic_close,null))
+        AnswerStatusImg.setImageDrawable(resources.getDrawable(R.drawable.ic_close, null))
         Handler().postDelayed({
             tw.text = ""
             tw.setCharacterDelay(150)
             tw.animateText("Try  again!")
         }, 2200)
     }
+
     private fun hideKeyboard(activity: Activity) {
         val view = activity.findViewById<View>(android.R.id.content)
         if (view != null) {

@@ -9,16 +9,18 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_question.*
+import kotlinx.android.synthetic.main.activity_square_root_question.*
 import java.util.*
+import kotlin.random.Random
 
-class QuestionActivity : AppCompatActivity() {
+class SquareRootQuestionActivity : AppCompatActivity() {
 
     private var tts: TextToSpeech? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_question)
+        setContentView(R.layout.activity_square_root_question)
+
         tts = TextToSpeech(applicationContext,
             TextToSpeech.OnInitListener { status ->
                 if (status != TextToSpeech.ERROR) {
@@ -26,42 +28,11 @@ class QuestionActivity : AppCompatActivity() {
                 }
             })
 
-        if (QuestionDetailsActivity.questionDisplayTypePosition == 0) {
-            question.text = QuestionDetailsActivity.question
-        } else {
-            when (QuestionDetailsActivity.rankOfDigits) {
-                1 -> {
-                    if (QuestionDetailsActivity.spinnerPosition == 1) {
-                        question1.textSize = 150f
-                    } else {
-                        question1.textSize = 300f
-                    }
-                }
-                2 -> {
-                    if (QuestionDetailsActivity.spinnerPosition == 1) {
-                        question1.textSize = 100f
-                    } else {
-                        question1.textSize = 200f
-                    }
-                }
-                3 -> {
-                    if (QuestionDetailsActivity.spinnerPosition == 1) {
-                        question1.textSize = 85f
-                    } else {
-                        question1.textSize = 150f
-                    }
-                }
-                4 -> {
-                    if (QuestionDetailsActivity.spinnerPosition == 1) {
-                        question1.textSize = 75f
-                    } else {
-                        question1.textSize = 100f
-                    }
-                }
-            }
-            question1.setCharacterDelay(QuestionDetailsActivity.speed.toLong())
-            question1.animateText(QuestionDetailsActivity.question.split(",").map { it.trim() })
-        }
+        val squareAnswer = Random.nextInt(0, 101)
+
+        val squareQuestion = squareAnswer * squareAnswer
+
+        question.text = "√ $squareQuestion"
 
         val tw = findViewById<TypeWriter>(R.id.text)
         tw.setCharacterDelay(150)
@@ -75,12 +46,7 @@ class QuestionActivity : AppCompatActivity() {
         submit.setOnClickListener {
             hideKeyboard(this)
             if (answer.editText?.text?.trim().toString() != "") {
-                if (String.format("%.2f", QuestionDetailsActivity.Answer)
-                        .toDouble() == String.format(
-                        "%.2f",
-                        answer.editText?.text.toString().toDouble()
-                    ).toDouble()
-                ) {
+                if (squareAnswer == answer.editText?.text.toString().toInt()) {
                     tw.setCharacterDelay(100)
                     tw.animateText("That`s correct")
                     tts!!.speak(

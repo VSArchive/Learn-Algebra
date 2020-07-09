@@ -8,6 +8,8 @@
     <string name="username">Username</string>
     <string name="already_have_an_account">Already have an account ? </string>
     <string name="forgot_password">Forgot Password ?</string>
+    <string name="answerStatus">AnswerStatus</string>
+    <string name="your_answer">Your Answer</string>
 
     <string-array name="Digits">
         <item>1</item>

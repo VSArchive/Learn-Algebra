@@ -170,16 +170,16 @@ class QuestionDetailsActivity : AppCompatActivity() {
                         }
                     } else if (intent.getStringExtra("operation") == "multi") {
                         op = "X"
-                        if (Answer == 0.0){
+                        if (Answer == 0.0) {
                             Answer = randomInt.toDouble()
-                        } else{
+                        } else {
                             Answer *= randomInt
                         }
                     } else if (intent.getStringExtra("operation") == "div") {
                         op = "÷"
-                        if (Answer == 0.0){
+                        if (Answer == 0.0) {
                             Answer = randomInt.toDouble()
-                        } else{
+                        } else {
                             Answer /= randomInt
                         }
                     }
@@ -216,16 +216,16 @@ class QuestionDetailsActivity : AppCompatActivity() {
                         }
                     } else if (intent.getStringExtra("operation") == "multi") {
                         op = "X"
-                        if (Answer == 0.0){
+                        if (Answer == 0.0) {
                             Answer = randomDouble
-                        } else{
+                        } else {
                             Answer *= randomDouble
                         }
                     } else if (intent.getStringExtra("operation") == "div") {
                         op = "÷"
-                        if (Answer == 0.0){
+                        if (Answer == 0.0) {
                             Answer = randomDouble
-                        } else{
+                        } else {
                             Answer /= randomDouble
                         }
                     }

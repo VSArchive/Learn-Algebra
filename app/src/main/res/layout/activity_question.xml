@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginBottom="30dp"
-        android:hint="Your Answer"
+        android:hint="@string/your_answer"
         android:textColor="@android:color/white"
         app:boxBackgroundColor="@android:color/white"
         app:boxBackgroundMode="outline"
@@ -64,7 +64,9 @@
         android:id="@+id/AnswerStatusImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/answerStatus"
         android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/answer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question" />
