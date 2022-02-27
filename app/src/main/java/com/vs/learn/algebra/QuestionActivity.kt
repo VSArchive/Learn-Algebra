@@ -1,4 +1,4 @@
-package com.example.kidsApp
+package com.vs.learn.algebra
 
 import android.app.Activity
 import android.content.Context
@@ -9,31 +9,60 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_cube_root_question.*
+import kotlinx.android.synthetic.main.activity_question.*
 import java.util.*
-import kotlin.random.Random
 
-class CubeRootQuestionActivity : AppCompatActivity() {
+class QuestionActivity : AppCompatActivity() {
+
     private var tts: TextToSpeech? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cube_root_question)
+        setContentView(R.layout.activity_question)
+        tts = TextToSpeech(
+            applicationContext
+        ) { status ->
+            if (status != TextToSpeech.ERROR) {
+                tts!!.language = Locale.US
+            }
+        }
 
-        tts = TextToSpeech(applicationContext,
-            TextToSpeech.OnInitListener { status ->
-                if (status != TextToSpeech.ERROR) {
-                    tts!!.language = Locale.US
+        if (QuestionDetailsActivity.questionDisplayTypePosition == 0) {
+            question.text = QuestionDetailsActivity.question
+        } else {
+            when (QuestionDetailsActivity.rankOfDigits) {
+                1 -> {
+                    if (QuestionDetailsActivity.spinnerPosition == 1) {
+                        question1.textSize = 150f
+                    } else {
+                        question1.textSize = 300f
+                    }
                 }
-            })
-
-        val cubeAnswer = Random.nextInt(0, 31)
-
-        val cubeQuestion = cubeAnswer * cubeAnswer * cubeAnswer
-
-        val displayQuestion = "3√ $cubeQuestion"
-
-        question.text = displayQuestion
+                2 -> {
+                    if (QuestionDetailsActivity.spinnerPosition == 1) {
+                        question1.textSize = 100f
+                    } else {
+                        question1.textSize = 200f
+                    }
+                }
+                3 -> {
+                    if (QuestionDetailsActivity.spinnerPosition == 1) {
+                        question1.textSize = 85f
+                    } else {
+                        question1.textSize = 150f
+                    }
+                }
+                4 -> {
+                    if (QuestionDetailsActivity.spinnerPosition == 1) {
+                        question1.textSize = 75f
+                    } else {
+                        question1.textSize = 100f
+                    }
+                }
+            }
+            question1.setCharacterDelay(QuestionDetailsActivity.speed.toLong())
+            question1.animateText(QuestionDetailsActivity.question.split(",").map { it.trim() })
+        }
 
         val tw = findViewById<TypeWriter>(R.id.text)
         tw.setCharacterDelay(150)
@@ -47,7 +76,12 @@ class CubeRootQuestionActivity : AppCompatActivity() {
         submit.setOnClickListener {
             hideKeyboard(this)
             if (answer.editText?.text?.trim().toString() != "") {
-                if (cubeAnswer == answer.editText?.text.toString().toInt()) {
+                if (String.format("%.2f", QuestionDetailsActivity.Answer)
+                        .toDouble() == String.format(
+                        "%.2f",
+                        answer.editText?.text.toString().toDouble()
+                    ).toDouble()
+                ) {
                     tw.setCharacterDelay(100)
                     tw.animateText("That`s correct")
                     tts!!.speak(

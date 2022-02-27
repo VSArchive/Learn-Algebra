@@ -1,4 +1,4 @@
-package com.example.kidsApp
+package com.vs.learn.algebra
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

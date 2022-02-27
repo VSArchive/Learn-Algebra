@@ -1,4 +1,4 @@
-package com.example.kidsApp
+package com.vs.learn.algebra
 
 import android.app.Activity
 import android.content.Context
@@ -9,30 +9,30 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_square_root_question.*
+import kotlinx.android.synthetic.main.activity_cube_root_question.*
 import java.util.*
 import kotlin.random.Random
 
-class SquareRootQuestionActivity : AppCompatActivity() {
-
+class CubeRootQuestionActivity : AppCompatActivity() {
     private var tts: TextToSpeech? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_square_root_question)
+        setContentView(R.layout.activity_cube_root_question)
 
-        tts = TextToSpeech(applicationContext,
-            TextToSpeech.OnInitListener { status ->
-                if (status != TextToSpeech.ERROR) {
-                    tts!!.language = Locale.US
-                }
-            })
+        tts = TextToSpeech(
+            applicationContext
+        ) { status ->
+            if (status != TextToSpeech.ERROR) {
+                tts!!.language = Locale.US
+            }
+        }
 
-        val squareAnswer = Random.nextInt(0, 101)
+        val cubeAnswer = Random.nextInt(0, 31)
 
-        val squareQuestion = squareAnswer * squareAnswer
+        val cubeQuestion = cubeAnswer * cubeAnswer * cubeAnswer
 
-        val displayQuestion = "√ $squareQuestion"
+        val displayQuestion = "3√ $cubeQuestion"
 
         question.text = displayQuestion
 
@@ -48,7 +48,7 @@ class SquareRootQuestionActivity : AppCompatActivity() {
         submit.setOnClickListener {
             hideKeyboard(this)
             if (answer.editText?.text?.trim().toString() != "") {
-                if (squareAnswer == answer.editText?.text.toString().toInt()) {
+                if (cubeAnswer == answer.editText?.text.toString().toInt()) {
                     tw.setCharacterDelay(100)
                     tw.animateText("That`s correct")
                     tts!!.speak(

@@ -1,4 +1,4 @@
-package com.example.kidsApp
+package com.vs.learn.algebra
 
 import android.content.Intent
 import android.os.Bundle
@@ -195,8 +195,7 @@ class DivisionQuestionDetailsActivity : AppCompatActivity() {
                 }
                 1 -> {
                     val random1stInt = Random.nextInt(x, y)
-                    var random2ndInt: Int
-                    random2ndInt = if (a < random1stInt) {
+                    val random2ndInt: Int = if (a < random1stInt) {
                         Random.nextInt(a, random1stInt)
                     } else {
                         Random.nextInt(a, random1stInt + a)

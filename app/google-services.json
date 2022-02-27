@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "252996203381",
+    "project_id": "learn-algebra-vs",
+    "storage_bucket": "learn-algebra-vs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252996203381:android:04f1c49f257af47078993c",
+        "android_client_info": {
+          "package_name": "com.vs.learn.algebra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "252996203381-n66bo1og0m0on7r2s1d5mmvpg52mlevf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6aioyPuyDGDxKjy_tmejvWEg3U7z6_X4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "252996203381-n66bo1og0m0on7r2s1d5mmvpg52mlevf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

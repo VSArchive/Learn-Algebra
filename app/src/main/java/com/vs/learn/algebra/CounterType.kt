@@ -1,4 +1,4 @@
-package com.example.kidsApp
+package com.vs.learn.algebra
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -7,10 +7,10 @@ import android.util.AttributeSet
 import android.widget.TextView
 
 @SuppressLint("AppCompatCustomView")
-class TypeWriter : TextView {
-    private var mText: CharSequence? = null
+class CounterType : TextView {
+    private lateinit var mText: List<String>
     private var mIndex = 0
-    private var mDelay: Long = 150
+    private var mDelay: Long = 150 // in ms
 
     constructor(context: Context?) : super(context)
     constructor(context: Context?, attrs: AttributeSet?) : super(
@@ -21,14 +21,14 @@ class TypeWriter : TextView {
     private val mHandler = Handler()
     private val characterAdder: Runnable = object : Runnable {
         override fun run() {
-            text = mText!!.subSequence(0, mIndex++)
-            if (mIndex <= mText!!.length) {
+            text = mText[mIndex++]
+            if (mIndex < mText.size) {
                 mHandler.postDelayed(this, mDelay)
             }
         }
     }
 
-    fun animateText(txt: CharSequence?) {
+    fun animateText(txt: List<String>) {
         mText = txt
         mIndex = 0
         text = ""

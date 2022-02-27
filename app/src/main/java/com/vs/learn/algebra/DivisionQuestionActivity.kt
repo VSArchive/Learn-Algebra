@@ -1,4 +1,4 @@
-package com.example.kidsApp
+package com.vs.learn.algebra
 
 import android.app.Activity
 import android.content.Context
@@ -20,12 +20,13 @@ class DivisionQuestionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_division_question)
-        tts = TextToSpeech(applicationContext,
-            TextToSpeech.OnInitListener { status ->
-                if (status != TextToSpeech.ERROR) {
-                    tts!!.language = Locale.US
-                }
-            })
+        tts = TextToSpeech(
+            applicationContext
+        ) { status ->
+            if (status != TextToSpeech.ERROR) {
+                tts!!.language = Locale.US
+            }
+        }
 
         question.text = ""
         if (DivisionQuestionDetailsActivity.questionDisplayTypePosition == 0) {
@@ -149,7 +150,7 @@ class DivisionQuestionActivity : AppCompatActivity() {
             index = 0
         }
         tts!!.speak(
-            "Thats incorrect answer!",
+            "That's incorrect answer!",
             TextToSpeech.QUEUE_ADD,
             null,
             null

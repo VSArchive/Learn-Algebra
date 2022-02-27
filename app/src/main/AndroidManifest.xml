@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.kidsApp">
+    package="com.vs.learn.algebra">
 
     <application
-        android:allowBackup="true"
-        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreenActivity">
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,36 +18,36 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".StartActivity"
+            android:name="com.vs.learn.algebra.StartActivity"
             android:theme="@style/AppTextField" />
         <activity
-            android:name=".SignUpActivity"
+            android:name="com.vs.learn.algebra.SignUpActivity"
             android:theme="@style/AppTextField" />
         <activity
-            android:name=".UserDetailsActivity"
+            android:name="com.vs.learn.algebra.UserDetailsActivity"
             android:theme="@style/AppTextField" />
-        <activity android:name=".MainActivity" />
+        <activity android:name="com.vs.learn.algebra.MainActivity" />
         <activity
-            android:name=".QuestionDetailsActivity"
+            android:name="com.vs.learn.algebra.QuestionDetailsActivity"
             android:theme="@style/Main" />
         <activity
-            android:name=".QuestionActivity"
+            android:name="com.vs.learn.algebra.QuestionActivity"
             android:theme="@style/Main"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".DivisionQuestionDetailsActivity"
+            android:name="com.vs.learn.algebra.DivisionQuestionDetailsActivity"
             android:theme="@style/Main" />
         <activity
-            android:name=".DivisionQuestionActivity"
+            android:name="com.vs.learn.algebra.DivisionQuestionActivity"
             android:theme="@style/Main"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".SquareRootQuestionActivity"
+            android:name="com.vs.learn.algebra.SquareRootQuestionActivity"
             android:theme="@style/Main"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".CubeRootQuestionActivity"
+            android:name="com.vs.learn.algebra.CubeRootQuestionActivity"
             android:theme="@style/Main"
             android:windowSoftInputMode="adjustResize" />
     </application>

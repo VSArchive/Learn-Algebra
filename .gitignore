@@ -1,11 +1,10 @@
 *.iml
 .gradle
-/local.properties
-.idea
+local.properties
+.idea/
 app/build
 .DS_Store
-/build
-app/google-services.json
-/captures
+build/
+captures
 .externalNativeBuild
 .cxx
